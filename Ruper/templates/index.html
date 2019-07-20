@@ -1,0 +1,20 @@
+<html>
+<head><b>Signup Form</b><head>
+<hr>
+<body>
+<form method="post">
+{% csrf_token %}
+    {% for form in rForm %}
+
+        <br>{{form.label}}<b>: </b>{{form}}{{form.errors}}<br>
+        {% if form.help_text %}
+            {{form.help_text}}
+        {% endif %}
+        {% for error in form.errors %}
+            {{error}}
+        {% endfor %}
+    {% endfor %}
+<input type="submit" value="Signup">
+</form>
+</body>
+</html>
