@@ -30,21 +30,3 @@ class LoginForm(forms.Form):
     password=forms.CharField(label="Password", max_length=50,widget=forms.PasswordInput)
 
 
-class ShoppingListForm(forms.Form):
-    class Meta:
-        model=ShoppingList
-        fields=('name')
-        labels={
-            'name':"Shopping List Name"
-        }
-
-
-class ShoppingItemForm(forms.Form):
-    class Meta:
-        model=ShoppingItem
-        fields=('name','price','quantity')
-        labels={
-            'name':'Item Name'
-            'price': 'Price'
-            'quantity': 'Quantity'
-        }
